@@ -3,29 +3,31 @@
 // along with the four methods that must
 // be overridden.
 
+import java.util.Scanner;
 
 public abstract class GameState {
 	protected GameStateManager gsm;
-
-	private int key;
+	private String key;
+	public static Scanner in = new Scanner(System.in);
 
 	public GameState(GameStateManager gsm) {
 		this.gsm = gsm;
 	}
-	public void setKey(int key){
+	public void setKey(String key){
 		this.key = key;
 	}
-	public int getKey(){
+	public String getKey(){
 		return this.key;
 	}
 
 	public abstract void init();
 	public abstract void update();
-	public abstract void handleInput(){
-		int input = Integer.parseInt(in.nextLine());
+	
+	public void handleInput(){
+		String input = in.nextLine();
 		setKey(input);
-		
 	}
+	
 	public abstract void print();
 	
 	public static void clearScreen() {

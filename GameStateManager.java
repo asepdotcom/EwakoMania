@@ -4,7 +4,6 @@
 // draw() and handles switching between different
 // GameStates.
 
-
 public class GameStateManager {
 	
 	private GameState[] gameStates;
@@ -13,16 +12,14 @@ public class GameStateManager {
 	
 	public static final int NUM_STATES = 5;
 	public static final int MENU = 0;
-	public static final int WORLD = 1;
+	public static final int PLAY = 1;
 	public static final int DUEL = 2;
 	public static final int DECKEDIT = 3;
 	public static final int SHOP = 4;
 	
 	public GameStateManager() {
-		
 		gameStates = new GameState[NUM_STATES];
-		setState(MENU);
-		
+		setState(MENU);	
 	}
 	
 	public void setState(int i) {
@@ -33,8 +30,8 @@ public class GameStateManager {
 			gameStates[i] = new MenuState(this);
 			gameStates[i].init();
 		}
-		else if(i == WORLD) {
-			gameStates[i] = new WorldState(this);
+		else if(i == PLAY) {
+			gameStates[i] = new PlayState(this);
 			gameStates[i].init();
 		}
 		/*else if(i == DUEL) {

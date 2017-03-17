@@ -3,7 +3,7 @@
 import java.util.Scanner;
 
 public class MenuState extends GameState {
-	protected Scanner in = new Scanner(System.in);
+	public static Player p = null;
 	private String[] options = {
 		"1. NEW GAME",
 		"2. LOAD GAME",
@@ -15,6 +15,7 @@ public class MenuState extends GameState {
 	}
 	
 	public void init() {
+		System.out.println("======== YOGS! =======");
 		print();
 	}
 	
@@ -24,17 +25,19 @@ public class MenuState extends GameState {
 	
 	public void handleInput(){
 		super.handleInput();
-		if(getKey() == 1) {
+		if(getKey().equals("1")) {
 			clearScreen();
 			System.out.println("=== Buat char baru ===");
 			System.out.print("Masukkan username : ");
-			String name = in.nextLine();
-			gsm.setState(GameStateManager.WORLD);
+			super.handleInput();
+			PlayState.player = new Player(getKey());
+			gsm.setState(GameStateManager.PLAY);
 		}
-		else if(getKey() == 2) {
-			gsm.setState(GameStateManager.WORLD);
+		else if(getKey().equals("2")) {
+			PlayState.player = ExternalFile.load();
+			gsm.setState(GameStateManager.PLAY);
 		}
-		else if(getKey() == 3) {
+		else if(getKey().equals("3")) {
 			System.exit(0);
 		}
 	}

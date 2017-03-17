@@ -1,35 +1,52 @@
+// The only subclass the fully utilizes the
+// Entity superclass (no other class requires
+// movement in a tile based map).
+// Contains all the gameplay associated with
+// the Player.
 
-public class Player extends Character {
+import java.io.Serializable;
+
+public class Player extends Character implements Serializable{
 	private int money;
-	Card[] database;
+	private static final long serialVersionUID = 1L;
 	
-	public Player(String name, Point position, int money, Card[] deck,Card[] database){
-		super(name,position,deck);
-		this.money = money;
-		this.database = new Card[100];
+	private final String DOWN = "s";
+	private final String LEFT = "a";
+	private final String RIGHT = "d";
+	private final String UP = "w";
+
+	
+	// gameplay
+	public Player(String name) {
+		super(name);
+		this.money = 0;
 	}
 	
-	public void setMoney(int money){
-		this.money = money;
-	}
 	public int getMoney(){
 		return this.money;
 	}
-	
-	public void setDatabase(int i, Card []database ){
-		this.database[i] = database[i];
+	public void setMoney(int money){
+		this.money = money;
 	}
 	
-	public Card getDatabase(int i, Card []database ){
-		return this.database[i];
+	// Keyboard input. Moves the player.
+	public void move(String direction) {
+		if (direction==DOWN){
+			this.getPosition().setY(this.getPosition().getY()-1);
+		}
+		if (direction==UP){
+			this.getPosition().setX(this.getPosition().getX()-1);
+		}
+		if (direction==RIGHT){
+			this.getPosition().setX(this.getPosition().getX()+1);
+		}
+		if (direction==LEFT){
+			this.getPosition().setY(this.getPosition().getY()+1);
+		}
 	}
-	public void printDuelist(){
-		System.out.print("Nama : ");
-		System.out.println(getName());
-		System.out.print("Posisi di peta : ");
-		System.out.println(getPosition().getX()+","+getPosition().getX() );
-		System.out.print("Money : ");
-		System.out.println(getMoney());
-		
+	
+	public void printLoc(){
+		System.out.print("Koordinatmu : ");
+		getPosition().print();
 	}
 }
