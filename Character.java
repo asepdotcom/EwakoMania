@@ -1,17 +1,17 @@
 
-import java.io.Serializable;
+import java.util.ArrayList;
 
-
-public class Character implements Serializable{
-	private String name;
-	private Point position;
-
-	//protected Card[] deck;
+public abstract class Character {
 	
-	public Character(String name){
+	
+	protected String name;
+	protected Point position;
+	protected ArrayList<Card> deck = new ArrayList<Card>(15);
+	
+	public Character(String name, Point position, ArrayList<Card> deck){
 		this.name = name;
-		this.position = new Point();
-		//this.deck = new Card[15];
+		this.position=position;
+		this.deck = deck;
 	}
 	
 	public void setName(String name){
@@ -24,9 +24,18 @@ public class Character implements Serializable{
 	public void setPosition(Point  position){
 		this.position = position;
 	}
-	public Point getPosition(){
+	public Point  getPosition(){
 		return this.position;
 	}
 	
-	//abstract void printDuelist();
+	
+	public void setDeck(ArrayList<Card> deck ){
+		this.deck = deck;
+	}
+	
+	public ArrayList<Card> getDeck(){
+		return this.deck;
+	}
+	
+	abstract void printDuelist();
 }

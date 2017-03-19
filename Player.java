@@ -1,52 +1,44 @@
-// The only subclass the fully utilizes the
-// Entity superclass (no other class requires
-// movement in a tile based map).
-// Contains all the gameplay associated with
-// the Player.
+import java.util.ArrayList;
 
-import java.io.Serializable;
-
-public class Player extends Character implements Serializable{
+public class Player extends Character {
 	private int money;
-	private static final long serialVersionUID = 1L;
+	ArrayList<Card> database = new ArrayList<Card>(100);
 	
-	private final String DOWN = "s";
-	private final String LEFT = "a";
-	private final String RIGHT = "d";
-	private final String UP = "w";
-
-	
-	// gameplay
-	public Player(String name) {
-		super(name);
-		this.money = 0;
+	public Player(String name, Point position, int money, ArrayList<Card> deck,ArrayList<Card> database){
+		super(name,position,deck);
+		this.money = money;
+		this.database = database;
 	}
 	
-	public int getMoney(){
-		return this.money;
-	}
 	public void setMoney(int money){
 		this.money = money;
 	}
-	
-	// Keyboard input. Moves the player.
-	public void move(String direction) {
-		if (direction==DOWN){
-			this.getPosition().setY(this.getPosition().getY()-1);
-		}
-		if (direction==UP){
-			this.getPosition().setX(this.getPosition().getX()-1);
-		}
-		if (direction==RIGHT){
-			this.getPosition().setX(this.getPosition().getX()+1);
-		}
-		if (direction==LEFT){
-			this.getPosition().setY(this.getPosition().getY()+1);
-		}
+	public int getMoney(){
+		return this.money;
 	}
 	
-	public void printLoc(){
-		System.out.print("Koordinatmu : ");
-		getPosition().print();
+	public void setDatabase(ArrayList<Card> database ){
+		this.database = database;
+	}
+	
+	public ArrayList<Card> getDeck() {
+		return super.getDeck();
+	}
+	
+	public void setDeck(ArrayList<Card> kartu) {
+		super.setDeck(kartu);
+		
+	}
+	public ArrayList<Card> getDatabase(){
+		return this.database;
+	}
+	public void printDuelist(){
+		System.out.print("Nama : ");
+		System.out.println(getName());
+		System.out.print("Posisi di peta : ");
+		System.out.println(getPosition().getX()+","+getPosition().getX() );
+		System.out.print("Money : ");
+		System.out.println(getMoney());
+		
 	}
 }

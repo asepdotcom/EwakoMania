@@ -1,23 +1,18 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.FileReader;
-
-public class SpellCard extends Card {
+public class TrapCard extends Card{
 	private String effect;
-	private String type;
-	private static SpellCard[] arrayOfSpellCard = new SpellCard[4];
+	private static TrapCard[] arrayOfTrapCard = new TrapCard[3];
 	
-	public SpellCard(String name, String desc, double probability, String type, String effect, int idKartu){
-		super(name, desc, probability, idKartu);
+	public TrapCard(String name, String desc, double probability, String effect, int idKartu){
+		super(name,desc,probability, idKartu);
 		this.effect = effect;
-		this.type = type;
-		
 	}
 	
-	public SpellCard(){
+	public TrapCard(){
 		super();
 		this.effect = "";
-		this.type = "";
 	}
 	
 	public void setEffect(String effect){
@@ -28,14 +23,6 @@ public class SpellCard extends Card {
 		return this.effect;
 	}
 	
-	public void setType(String type){
-		this.type = type;
-	}
-	
-	public String getType(){
-		return this.type;
-	}
-	
 	public void printCard(){
 		System.out.print("Nama : ");
 		System.out.println(getName());
@@ -43,8 +30,6 @@ public class SpellCard extends Card {
 		System.out.println(getDesc());
 		System.out.print("Probability to get this card : ");
 		System.out.println(getProbability());
-		System.out.print("Type : ");
-		System.out.println(getType());
 		System.out.print("Effect : ");
 		System.out.println(getEffect());
 	}
@@ -69,36 +54,32 @@ public class SpellCard extends Card {
 		return super.getID();
 	}
 	
-	public static SpellCard[] getArrayOfSpellCard(){
-		return SpellCard.arrayOfSpellCard;
+	public static TrapCard[] getArrayOfTrapCard(){
+		return TrapCard.arrayOfTrapCard;
 	}
 	
-	public static SpellCard getArrayOfSpellCard(int idx){
-		return SpellCard.arrayOfSpellCard[idx];
+	public static TrapCard getArrayOfSpellCard(int idx){
+		return TrapCard.arrayOfTrapCard[idx];
 	}
 	
-public static SpellCard[] bacaSpellCard()throws IOException{
-	    BufferedReader br = new BufferedReader(new FileReader("SpellCard.txt"));
+	public static TrapCard[] bacaTrapCard()throws IOException{
+	 BufferedReader br = new BufferedReader(new FileReader("TrapCard.txt"));
 	    try {
 	        while (br.readLine() != null) {
-	        for (int i = 0;i < 4; i++) {
+	        for (int i = 0;i < 3; i++) {
 	        	String name = br.readLine();
 	            String desc = br.readLine();
 	            double probability = Double.parseDouble(br.readLine());
-	            String type = br.readLine();
 	            String effect = br.readLine();
 	            int id = Integer.parseInt(br.readLine());
-	            SpellCard spellCard = new SpellCard(name,desc,probability,type,effect,id);
-	            SpellCard.arrayOfSpellCard[i] = spellCard;
-	          
-	        }     
-	        
-	    }
-	       
+	          TrapCard trapCard = new TrapCard(name,desc,probability,effect,id);
+	          TrapCard.arrayOfTrapCard[i] = trapCard;
+	        }      
+	      } 
 	    } finally {
 	        br.close();
-	      }
-	    return SpellCard.arrayOfSpellCard;    
+		  }
+	    return TrapCard.arrayOfTrapCard;    
 	}
 }
 

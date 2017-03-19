@@ -1,9 +1,10 @@
+import java.util.ArrayList;
 
 public class Duelist extends Character{
 	private int goldDrop;
 	private String rank;
 	
-	public Duelist(String name, Point position, Card[] deck, int goldDrop, String rank){
+	public Duelist(String name, Point position, ArrayList<Card> deck, int goldDrop, String rank){
 		super(name,position,deck);
 		this.goldDrop = goldDrop;
 		this.rank = rank;
