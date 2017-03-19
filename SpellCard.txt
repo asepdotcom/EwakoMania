@@ -1,0 +1,27 @@
+Fissure
+A giant Hand that trample everything
+0.4
+Normal
+Destroy the 1 face-up monster your opponent controls that has the lowest ATK(your choice, if tied).
+9
+
+Change of Heart
+Every person have darkness in their heart that can be manipulated
+0.3
+Normal
+Target 1 monster your opponent controls, take control of it until the End Phase.
+10
+
+Stop Defense
+No one can play defensive forever
+0.8
+Normal
+Select 1 Defense Position monster on your opponent's side of the field and change it to Attack Position.
+11
+
+Follow Wind
+Just like the wind, monster that have more wings is stronger
+0.6
+Equip
+Increase the ATK and DEF of a Winged-Beast-Type monster equipped with this card by 300 points.
+12

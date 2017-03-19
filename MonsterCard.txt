@@ -1,0 +1,87 @@
+Blue-Eyes White Dragon
+This legendary dragon is a powerful engine of destruction. Virtually invincible, very few have faced this awesome creature and lived to tell the tale
+0.1
+3000
+2500
+8
+Light
+Dragon
+None
+1
+
+Celtic Guardian
+An elf who learned to wield a sword, he buffles enemies with lightning-swift attacks.
+0.8
+1400
+1200
+4
+Earth
+Warrior
+None
+2
+
+Tyhone
+Capable of firing cannonballs from its mouth for long-range attacks, this creature is particulary effective in mountain battles.
+0.9
+1200
+1400
+4
+Wind
+Winged Beast
+None
+3
+
+Hane-Hane
+A cute grip reaper that hold extraordinary power
+0.4
+450
+500
+2
+Earth
+Beast
+Flip : Select 1 monster on the field and return it to its owner's hand.
+4
+
+Man-Eater Bug
+A dangerous insect that devour everything
+0.6
+450
+600
+2
+Earth
+Insect
+Flip : Target 1 monster on the field, destroy that target.
+5
+
+Turtle Tiger
+A tiger encased in a protective shell that attacks with razor-shard fangs.
+0.7
+1000
+1500
+4
+Water
+Aqua
+None
+6
+
+Harpie Lady
+This human-shaped animal with wings is beautiful to watch but deadly in battle
+0.5
+1300
+1400
+4
+Wind
+Winged Beast
+None
+7
+
+Curse of Dragon
+A wicked dragon that taps into dark forces to execute a powerful attack.
+0.3
+2000
+1500
+5
+Dark
+Dragon
+None
+8
